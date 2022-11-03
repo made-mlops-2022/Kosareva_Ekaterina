@@ -2,25 +2,25 @@
 
 # File structure:
 
-| congif
-|  ├──config1.yaml
-|  ├──config2.yaml
-| data
-|  ├──data_test.csv
-|  ├──data_train.csv
-|  ├──generate_synthetic.py
-|  ├──synthetic_data.csv
-| logs
-|  ├──test_log.log
-|  ├──train_log.log
-| models
-|  ├──predictions.csv
-|  ├──rfc_model.sav
-| notebooks
-|  ├──EDA+model.ipynb
-| predict.py
-| testy_train.py
-| train.py
+	| congif
+	|  ├──config1.yaml
+	|  ├──config2.yaml
+	| data
+	|  ├──data_test.csv
+	|  ├──data_train.csv
+	|  ├──generate_synthetic.py
+	|  ├──synthetic_data.csv
+	| logs
+	|  ├──test_log.log
+	|  ├──train_log.log
+	| models
+	|  ├──predictions.csv
+	|  ├──rfc_model.sav
+	| notebooks
+	|  ├──EDA+model.ipynb
+	| predict.py
+	| testy_train.py
+	| train.py
 
 # Setup
 ## Envs
@@ -28,44 +28,44 @@
   - Python>=3.6
   - Istall python packages
 
-git clone -------
-cd -------
-pip install -r requirements.txt
+	git clone -------
+	cd -------
+	pip install -r requirements.txt
        
 # Train
 
-1) Train with configuration file:
+	1) Train with configuration file:
 
-python3 train.py --config config/config1.yaml
+	python3 train.py --config config/config1.yaml
 
-[options]
-train_data: data/data_train.csv
-target: condition
-save_path: models/rfc_model.sav
-n_estimators: 100
-max_depth: 3
-random_state: 42
+	[options]
+	train_data: data/data_train.csv
+	target: condition
+	save_path: models/rfc_model.sav
+	n_estimators: 100
+	max_depth: 3
+	random_state: 42
 
-2) Train with params:
+	2) Train with params:
 
-python3 train.py --train-data "directory with data" --n-estimators N --max-depth D --random-state RS --target "target name" --save-path "model name"
+	python3 train.py --train-data "directory with data" --n-estimators N --max-depth D --random-state RS --target "target name" --save-path "model name"
 
-By default:
-  --train-data: data/train_data.csv
-  --n-estimators: 50
-  --max-depth: 7
-  --random-state: 0
-  --target: 'condition'
-  --save-path: models/rfc_model.sav 
+	By default:
+  	--train-data: data/train_data.csv
+  	--n-estimators: 50
+  	--max-depth: 7
+  	--random-state: 0
+  	--target: 'condition'
+ 		--save-path: models/rfc_model.sav 
 
 # Predict
 
-python3 predict.py --test-data "path to file with data" --model-path "path to trained model"  --save-results "path to file for predictions"
+	python3 predict.py --test-data "path to file with data" --model-path "path to trained model"  --save-results "path to file for predictions"
 
-By default:
-   --test-data: data/data_test.csv
-   --model-path: models/rfc_model.sav
-   --save-results: models/predictions.csv
+	By default:
+  		--test-data: data/data_test.csv
+   		--model-path: models/rfc_model.sav
+   		--save-results: models/predictions.csv
 
 # Logging
 Example of log file for training:
