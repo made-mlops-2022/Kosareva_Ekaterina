@@ -1,6 +1,10 @@
 # Kosareva_Ekaterina
 
-# File structure:
+In this project RandomForest model is trained to predict heart disease for Heart Disease Cleavlend dataset https://www.kaggle.com/datasets/cherngs/heart-disease-cleveland-uci
+
+Data was previously splitted for train/test with split_size = 0.2
+
+## File structure:
 
 	| congif
 	|  ├──config1.yaml
@@ -22,8 +26,8 @@
 	| testy_train.py
 	| train.py
 
-# Setup
-## Envs
+## Setup
+### Envs
   - Linux
   - Python>=3.6
   - Istall python packages
@@ -32,7 +36,7 @@
 	cd -------
 	pip install -r requirements.txt
        
-# Train
+## Train
 
 	1) Train with configuration file:
 
@@ -58,7 +62,7 @@
   	--target: 'condition'
  		--save-path: models/rfc_model.sav 
 
-# Predict
+## Predict
 
 	python3 predict.py --test-data "path to file with data" --model-path "path to trained model"  --save-results "path to file for predictions"
 
@@ -67,7 +71,7 @@
    		--model-path: models/rfc_model.sav
    		--save-results: models/predictions.csv
 
-# Logging
+## Logging
 Example of log file for training:
     
     2022-11-03 07:17:23,323 DEBUG Training is starting...
