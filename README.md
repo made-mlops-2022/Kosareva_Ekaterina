@@ -32,9 +32,9 @@ Data was previously splitted for train/test with split_size = 0.2
   - Python>=3.6
   - Istall python packages
 
-	git clone -------
-	cd -------
-	pip install -r requirements.txt
+		git clone https://github.com/made-mlops-2022/Kosareva_Ekaterina.git
+		cd Kosareva_Ekaterina
+		pip install -r requirements.txt
        
 ## Train
 
