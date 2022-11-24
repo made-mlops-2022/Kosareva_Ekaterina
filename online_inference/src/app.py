@@ -15,7 +15,7 @@ BASE_DIR = os.path.abspath(
     )
 )  # .../api
 
-MODEL_PATH = os.path.join(BASE_DIR, '../model/rfc_model.sav')
+MODEL_PATH = os.path.join(BASE_DIR, 'model/rfc_model.sav')
 
 model:Optional[RandomForestClassifier] = None
 
