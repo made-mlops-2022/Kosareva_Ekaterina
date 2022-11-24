@@ -3,7 +3,7 @@ import pandas as pd
 import pytest
 import json
 from fastapi.testclient import TestClient
-from online_inference.src.app import app
+from app import app
 
 
 @pytest.fixture()
