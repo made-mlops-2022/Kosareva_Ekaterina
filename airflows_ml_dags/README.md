@@ -7,4 +7,4 @@
 
 2) развернуть докер
 
-  docker compose up --build
+  docker-compose up --build
