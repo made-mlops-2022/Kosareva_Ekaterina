@@ -8,3 +8,9 @@
 2) развернуть докер
 
   docker-compose up --build
+  
+ 3) запустить в браузере
+  http://localhost:8080/
+
+4) остановить Airflow
+  docker compose down
