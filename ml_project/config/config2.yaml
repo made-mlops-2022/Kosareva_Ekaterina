@@ -1,7 +1,0 @@
-[options]
-train_data: data/data_train.csv
-target: condition
-save_path: models/rfc_model.sav
-n_estimators: 50
-max_depth: 7
-random_state: 0
