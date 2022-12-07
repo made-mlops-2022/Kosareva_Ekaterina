@@ -8,6 +8,9 @@ from airflow.sensors.python import PythonSensor
 from airflow.utils.dates import days_ago
 from docker.types import Mount
 
+def wait_for_file(file_name):
+    return os.path.exists(file_name)
+
 
 default_args = {
     "owner": "airflow",
@@ -24,6 +27,16 @@ with DAG(
 ) as dag:
 
     start_train = DummyOperator(task_id="start-train")
+    
+    waiting_data = PythonSensor(
+        task_id="waiting_data",
+        python_callable=wait_for_file,
+        op_args=["/opt/airflow/data/raw/{{ ds }}/data.csv"],
+        timeout=6000,
+        poke_interval=10,
+        retries=100,
+        mode="poke"
+    )
 
     preprocess = DockerOperator(
         image="airflow-preprocess",
@@ -54,4 +67,4 @@ with DAG(
 
     stop_train = DummyOperator(task_id="stop-train")
 
-    start_train >> preprocess >> train >> validate >> stop_train
+    start_train >> waiting_data>> preprocess >> train >> validate >> stop_train
