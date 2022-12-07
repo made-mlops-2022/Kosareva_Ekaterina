@@ -31,7 +31,7 @@ with DAG(
         do_xcom_push=False,
         mount_tmp_dir=False,
         # !!! HOST folder(NOT IN CONTAINER) replace with yours !!!
-        mounts=[Mount(source='/home/kate_kosareva/PycharmProjects/airflow-examples/data', target="/data", type='bind')]
+        mounts=[Mount(source='/home/kate_kosareva/PycharmProjects/airflows_ml_dags/data', target="/data", type='bind')]
         #"/Users/mikhailmar/IdeaProjects/airflow-examples/data/"
 
     )
