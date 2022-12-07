@@ -31,7 +31,7 @@ with DAG(
         task_id="docker-airflow-preprocess",
         do_xcom_push=False,
         mount_tmp_dir=False,
-        mounts=[Mount(source='/home/kate_kosareva/PycharmProjects/airflow-examples/data', target="/data", type='bind')]
+        mounts=[Mount(source='/home/kate_kosareva/PycharmProjects/airflows_ml_dags/data', target="/data", type='bind')]
     )
 
     train = DockerOperator(
@@ -40,7 +40,7 @@ with DAG(
         task_id="docker-airflow-train",
         do_xcom_push=False,
         mount_tmp_dir=False,
-        mounts=[Mount(source='/home/kate_kosareva/PycharmProjects/airflow-examples/data', target="/data", type='bind')]
+        mounts=[Mount(source='/home/kate_kosareva/PycharmProjects/airflows_ml_dags/data', target="/data", type='bind')]
     )
 
     validate = DockerOperator(
@@ -49,7 +49,7 @@ with DAG(
         task_id="docker-airflow-validate",
         do_xcom_push=False,
         mount_tmp_dir=False,
-        mounts=[Mount(source='/home/kate_kosareva/PycharmProjects/airflow-examples/data', target="/data", type='bind')]
+        mounts=[Mount(source='/home/kate_kosareva/PycharmProjects/airflows_ml_dags/data', target="/data", type='bind')]
     )
 
     stop_train = DummyOperator(task_id="stop-train")
